@@ -1,0 +1,22 @@
+# MAKEFILE FOR CANADIAN SMALL LAKE MODULE AND FLaMe
+
+#NPROC = 10
+FC= gfortran
+
+TARGET = runlake_check
+OBJ= XIT.o CLASSL.o TSOLVL.o MIXLYR.o DRCOEFL.o LKTRANS.o CLASSI.o DIASURFZ.o DRCOEF.o FLXSURFZ.o SCREENRH.o SLDIAG.o SNINFL.o SNOADD.o SNOALBA.o SNOALBW.o SNOVAP.o TLSPOST.o TLSPREP.o TMELT.o TSOLVE.o EQNST.o FREECONV.o  area_layer.f initialisation.f oxidation.f CH4_module.f Clabile_module.f O2_module.f transport.f search_zebmin.f Writing.f density.f geometry_bgc.f
+	
+$(TARGET): $(OBJ)
+	$(FC) -o  $@ $(OBJ) RUNLAKE.f 
+	
+.f:
+	$(FC) -o $* $*.f
+.f.o:
+	$(FC) -c $*.f
+
+#run:
+#    mpirun -np $(NPROC) ./$(TARGET)
+
+clean:
+	rm *.f runlake_paralize
+
