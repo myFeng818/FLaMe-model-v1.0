@@ -50,15 +50,15 @@ If users have problems or difficulties in compiling and running the model, pleas
 
 	(1) Before compiling and running the FLaMe model, the users need to modify the parameters in RUNLAKE.f, which is the main of the model.
 	The parameters need to be modified:
-	GEN_DIR and FILE_DIR: parameters for the directory where the codes are deposited. 
-  SET: the scenario the users may use (the users may have multiple scenarios to test the model, so this parameter is used to set the scenario directory)
-  x_per_m: the number of printing the output per month, we have two choice for this parameter. i.e., 1 for monthly output and 4 for weekly output.
-  NLAT: Number of grid cells
-  NMOS: Number of representative lakes in each grid cell
+	GEN_DIR and FILE_DIR: parameters for the directory where the codes are deposited.
+    SET: the scenario the users may use (the users may have multiple scenarios to test the model, so this parameter is used to set the scenario directory)
+    x_per_m: the number of printing the output per month, we have two choice for this parameter. i.e., 1 for monthly output and 4 for weekly output.
+    NLAT: Number of grid cells
+    NMOS: Number of representative lakes in each grid cell
 
 	(2) In the “CODE” subfolder, we provide a makefile to compile the FLaMe model, with the following commands:
-	rm *.o: remove all the previously compiled files
-	make -f Makefile_check: Compile the FLaMe model with a gfortran compiler
-	./RUNLAKE_check: Run the model, and you will find the new results in the “output” subfolder.
+    rm *.o: remove all the previously compiled files
+    make -f Makefile_check: Compile the FLaMe model with a gfortran compiler
+    ./RUNLAKE_check: Run the model, and you will find the new results in the “output” subfolder.
 
 
